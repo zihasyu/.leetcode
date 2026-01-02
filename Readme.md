@@ -18,7 +18,10 @@
 - LeetCode 239: 滑动窗口最大值
 
 ## 4. 子串 (Substring)
-- LeetCode 560: 和为K的子数组
+### LeetCode 560: 和为K的子数组
+why we need prefixSum? 
+题设的nums并不是单调的，这意味着难以用滑窗方式（双指针）统计数目。
+而【前缀和的差】存储进map可以O(n)地去确定究竟有多少种组合。
 ### LeetCode 53: 最大子数组和   
 ```c++
 //kadane算法，记录以当前位置结尾的最大和
