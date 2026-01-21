@@ -12,13 +12,19 @@ public:
     int subarraySum(vector<int> &nums, int k)
     {
         int ans = 0;
-        if (nums.empty())
-            return ans;
-        int sum = 0, left = 0, right = 0;
-        while (right < nums.size())
+        unordered_map<int, int> prefixSumCount;
+        prefixSumCount[0] = 1; // 初始化前缀和为0的计数为1
+        int prefixSum = 0;
+        for (int num : nums)
         {
-            if (sum < k)
+            prefix  Sum += num;
+            if (prefixSumCount.find(prefixSum - k) != prefixSumCount.end())
+            {
+                ans += prefixSumCount[prefixSum - k];
+            }
+            prefixSumCount[prefixSum]++;
         }
+        return ans;
     }
 };
 // @lc code=end
