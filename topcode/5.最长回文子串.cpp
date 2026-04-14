@@ -2,6 +2,8 @@
  * @lc app=leetcode.cn id=5 lang=cpp
  *
  * [5] 最长回文子串
+ *
+ * 中心扩展法枚奇偶两种情况
  */
 
 // @lc code=start
