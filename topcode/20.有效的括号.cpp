@@ -10,10 +10,11 @@ class Solution
 public:
     bool isValid(string s)
     {
-        std::unordered_map<char, char> pairs = {
+        unordered_map<char, char> pairs = {
             {')', '('},
             {'}', '{'},
             {']', '['}};
+
         stack<char> st;
         for (char ch : s)
         {
