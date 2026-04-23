@@ -22,29 +22,26 @@ public:
             if (nums[mid] == target)
                 return mid;
 
-            if (nums[left] <= nums[mid])
+            if (nums[mid] < nums[right])
             {
-                // 左半部分有序 [left, mid]
-                if (nums[left] <= target && target < nums[mid])
+                // right 单调
+                if (nums[mid] < target && target <= nums[right])
                 {
-                    right = mid - 1; // target 在左半部分
+                    left = mid + 1;
                 }
                 else
                 {
-                    left = mid + 1; // target 在右半部分
+                    right = mid - 1;
                 }
             }
             else
             {
-                // 右半部分有序 [mid, right]
-                if (nums[mid] < target && target <= nums[right])
+                if (nums[left] <= target && target < nums[mid])
                 {
-                    left = mid + 1; // target 在右半部分
+                    right = mid - 1;
                 }
                 else
-                {
-                    right = mid - 1; // target 在左半部分
-                }
+                    left = mid + 1;
             }
         }
         return -1;
