@@ -95,3 +95,42 @@ public:
     }
 };
 // @lc code=end
+
+// 归并写法
+//  class Solution {
+//  public:
+//      // ListNode dummy(0,nullptr);
+//      // ListNode* p0=&dummy;
+
+//     ListNode* mergeSort(vector<ListNode*>& lists,int left,int right){
+//         if(left>right)
+//             return nullptr;
+//         if(left==right)
+//             return lists[left];
+
+//         auto mid=left+(right-left)/2;
+//         auto LeftList=mergeSort(lists,left,mid);
+//         auto RightList=mergeSort(lists,mid+1,right);
+//         ListNode dummy(0,nullptr);
+//         ListNode* tmp=&dummy;
+//         while(LeftList && RightList){
+//             if(LeftList->val < RightList->val){
+//                 tmp->next=LeftList;
+//                 LeftList=LeftList->next;
+//                 tmp=tmp->next;
+//             }else{
+//                 tmp->next=RightList;
+//                 RightList=RightList->next;
+//                 tmp=tmp->next;
+//             }
+//         }
+//         tmp->next=LeftList?LeftList:RightList;
+//         return dummy.next;
+//     }
+//     ListNode* mergeKLists(vector<ListNode*>& lists) {
+//         if(lists.empty())
+//             return nullptr;
+//         auto ans=mergeSort(lists,0,lists.size()-1);
+//         return ans;
+//     }
+// };
