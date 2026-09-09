@@ -1,0 +1,4 @@
+pass : 1,128
+forget : 49
+
+128: set<int> st(nums.begin(), nums.end());

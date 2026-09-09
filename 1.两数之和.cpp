@@ -16,7 +16,7 @@ public:
         {
             if (Map.find(nums[i]) != Map.end())
             {
-                return {i, Map[nums[i]]};
+                return {Map[nums[i]], i};
             }
             else
             {
