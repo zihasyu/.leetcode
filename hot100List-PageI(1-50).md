@@ -41,7 +41,8 @@ public:
 };
 ```
 
-### 128.最长连续序列 vector转set
+### 128.最长连续序列 
+vector转set
 ```c++
 class Solution {
 public:
